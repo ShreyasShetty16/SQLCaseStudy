@@ -1,0 +1,52 @@
+<h3><p>Get Task</p></h3>
+<form [formGroup]="form6" (ngSubmit)="onSubmit(form6.value)">
+    <h3>TASK ID :</h3>
+    <input type="number" name="task_ID" formControlName="task_ID"/>
+    <br/>
+    <br/>
+
+    <button type = "button" class= "btn btn-success"(click)="onSubmit(form6.value)">GetTask</button>    
+</form>
+
+<h2>Task details</h2>
+
+ <div *ngFor = "let task1 of tasks" style="border: 3px;">
+   <table border="2px" align="center">
+       <tr>
+            <td>Task_ID :</td><td>{{task1.task_ID}}</td>  
+        </tr>
+        <tr>
+            <td>Owner_ID :</td><td> {{task1.owner_ID}} <br /></td>
+        </tr>
+
+        <tr>
+            <td>Creator_ID :</td><td>{{task1.creator_ID}} </td> 
+        </tr>
+        <tr>
+            <td>Name :</td><td> {{task1.name}} </td>
+        </tr>
+        <tr>
+            <td>Description :</td><td> {{task1.description}} </td>
+        </tr>
+        <tr>
+            <td>Status :</td><td> {{task1.status}} </td>
+        </tr>
+        <tr>
+            <td>Priority :</td><td> {{task1.priority}} </td>
+        </tr>
+        <tr>
+            <td>Notes :</td><td> {{task1.notes}} </td>
+        </tr>
+        <tr>
+            <td>IsBookmarked :</td><td> {{task1.isBookmarked}} </td>
+        </tr>
+        <tr>
+            <td>Created_On :</td><td> {{task1.created_On}} </td>
+        </tr>
+        <tr>
+            <td>Status_Changed_On :</td><td> {{task1.status_Changed_On}} </td>
+        </tr>
+    
+</table>
+</div>
+

@@ -1,0 +1,17 @@
+<form [formGroup]="form7" (ngSubmit)="onSubmit(form7.value)">
+    owner_ID :
+    <input type="number" name="owner_ID" formControlName="owner_ID"/>
+    <br/>
+    <br/>
+
+
+    task_ID :
+    <input type="number" name="task_ID" formControlName="task_ID"/>
+    <br/>
+    <br/>
+
+    
+
+    <button type = "button" class= "btn btn-success"(click)="onSubmit(form7.value)">Assign Task</button>    
+</form>
+

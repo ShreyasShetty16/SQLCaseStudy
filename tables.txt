@@ -1,0 +1,36 @@
+create table USER(User_ID int primary key,
+Username varchar(20) not null,
+Email varchar(20) not null,
+First_Name varchar(20) not null,
+Last_Name varchar(20) not null,
+Contact_Number varchar(12) not null,
+Role varchar(20) not null,
+isActive boolean not null,
+DOB date not null,
+Created_On datetime not null,
+password varchar(20) not null);
+
+insert into table USER values(User_ID:1,Username:"Shreyas",Email:"shreyascshetty@gmail.com",First_Name:"Shreyas",Last_Name:"Shetty",Contact_Number:"0912345678",Role:"Engineer",isActive:true,DOB:"16/09/1997",Created_On:"2018-09-01 09:01:15",password:"admin");
+
+create table TASK(Task_ID int primary key,
+Owner_ID int,
+Creator_ID int,
+Name varchar(20),
+Description varchar(50),
+Status varchar(15),
+Priority varchar(15),
+Notes varchar(75),
+isBookmarked boolean,
+Created_On datetime,
+Status_Changed_On datetime,
+foreign key(Owner_ID) references USER(User_ID),
+foreign key(Creator_ID) references USER(User_ID));
+
+create table NOTIFICATION(Notification_ID int primary key,
+Task_ID int,
+Task_Owner_ID int,
+Status varchar(15),
+Created_On datetime,
+Status_Changed_On datetime,
+foreign key(Task_ID) references TASK(Task_ID),
+foreign key(Task_Owner_ID) references USER(User_ID));
